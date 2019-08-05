@@ -115,6 +115,7 @@ class DeleteFilesTask extends \TYPO3\CMS\Scheduler\Task\AbstractTask
                 if ($addPath) {
                     $item = $path.DIRECTORY_SEPARATOR.$item;
                 }
+                //TODO: get the stop time from the file and if it is lower than $timestamp, delete!
                 if (filemtime($item) < $timestamp) {
                     $itemsToDelete[] = $item;
                 }
